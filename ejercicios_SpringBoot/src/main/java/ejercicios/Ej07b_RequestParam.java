@@ -5,6 +5,10 @@ import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.ResponseBody;
 
+import lombok.AllArgsConstructor;
+import lombok.Getter;
+import lombok.Setter;
+
 @Controller
 public class Ej07b_RequestParam {
 	@ResponseBody
@@ -14,31 +18,13 @@ public class Ej07b_RequestParam {
 				return new TextToJSON(name,surname);
 	
 		}
-		
+	@Getter
+	@Setter
+	@AllArgsConstructor
+	//@Data - engloba todo
 		public static class TextToJSON{
 			String name = "";
-			String surname = "";
-						
-			public TextToJSON(String name, String surname) {
-				super();
-				this.name = name;
-				this.surname = surname;
-			}
-			public String getName() {
-				return name;
-			}
-			public void setName(String name) {
-				this.name = name;
-			}
-			public String getSurname() {
-				return surname;
-			}
-			public void setSurname(String surname) {
-				this.surname = surname;
-			}
-			
-			
-			
+			String surname = "";					
 		}
 
 }
